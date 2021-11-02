@@ -1,2 +1,3 @@
 # Planetenerkundung
-Planetenerkundung
+Planetenerkundung Informatik Klasse 10 / EPH Gymnasium
+
