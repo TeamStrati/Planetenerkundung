@@ -6,7 +6,7 @@ public class Rover extends Actor
 
     public void act() 
     {
-
+       fahren();
     } 
     
     public void fahren()
@@ -101,8 +101,8 @@ public class Rover extends Actor
     }
 
     /**
-     * Der Rover dreht sich um 90 Grad in die Richtung, die mit richtung („links“ oder „rechts“) übergeben wurde.
-     * Sollte ein anderer Text (String) als "rechts" oder "links" übergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
+     * Der Rover dreht sich um 90 Grad in die Richtung, die mit richtung (â€žlinksâ€œ oder â€žrechtsâ€œ) Ã¼bergeben wurde.
+     * Sollte ein anderer Text (String) als "rechts" oder "links" Ã¼bergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
      */
     public void drehe(String richtung)
     {
@@ -121,7 +121,7 @@ public class Rover extends Actor
     }
 
     /**
-     * Der Rover gibt durch einen Wahrheitswert (true oder false )zurück, ob sich auf seiner Position ein Objekt der Klasse Gestein befindet.
+     * Der Rover gibt durch einen Wahrheitswert (true oder false )zurÃ¼ck, ob sich auf seiner Position ein Objekt der Klasse Gestein befindet.
      * Eine entsprechende Meldung erscheint auch auf dem Display.
      */
     public boolean gesteinVorhanden()
@@ -137,9 +137,9 @@ public class Rover extends Actor
     }
 
     /**
-     * Der Rover überprüft, ob sich in richtung ("rechts", "links", oder "vorne") ein Objekt der Klasse Huegel befindet.
+     * Der Rover Ã¼berprÃ¼ft, ob sich in richtung ("rechts", "links", oder "vorne") ein Objekt der Klasse Huegel befindet.
      * Das Ergebnis wird auf dem Display angezeigt.
-     * Sollte ein anderer Text (String) als "rechts", "links" oder "vorne" übergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
+     * Sollte ein anderer Text (String) als "rechts", "links" oder "vorne" Ã¼bergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
      */
     public boolean huegelVorhanden(String richtung)
     {
@@ -205,8 +205,8 @@ public class Rover extends Actor
         }
     }
 
-    /**
-     * Der Rover erzeugt ein Objekt der Klasse „Markierung“ auf seiner Position.
+    /*
+     * Der Rover erzeugt ein Objekt der Klasse â€žMarkierungâ€œ auf seiner Position.
      */
     public void setzeMarke()
     {
@@ -214,7 +214,7 @@ public class Rover extends Actor
     }
 
     /**
-     * *Der Rover gibt durch einen Wahrheitswert (true oder false )zurück, ob sich auf seiner Position ein Objekt der Marke befindet.
+     * *Der Rover gibt durch einen Wahrheitswert (true oder false )zurÃ¼ck, ob sich auf seiner Position ein Objekt der Marke befindet.
      * Eine entsprechende Meldung erscheint auch auf dem Display.
      */
     public boolean markeVorhanden()
