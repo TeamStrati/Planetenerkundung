@@ -9,10 +9,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Marke extends Actor
 
 {
+    
      public Marke()
     {
         setImage("images/marke.png");
+        
     }
+    
+    public void drehe(String richtung)
+    {
+        if(richtung=="rechts")
+        {
+            setRotation(getRotation()+10);
+        }
+      
+        }
+    
     
     /**
      * Act - do whatever the Marke wants to do. This method is called whenever
@@ -20,6 +32,6 @@ public class Marke extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        drehe("rechts");
     }    
 }
