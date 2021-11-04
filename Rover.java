@@ -6,8 +6,65 @@ public class Rover extends Actor
 
     public void act() 
     {
-       fahren();
+       
     } 
+    
+    public void nr1()
+    {
+        drehe("rechts");
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+        analysiereGestein();
+        drehe("zurück");
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+        drehe("rechts");
+    }
+
+    public void nr2()
+    {
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+        drehe("rechts");
+        fahre();
+        drehe("rechts");
+        
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+        drehe("links");
+        fahre();
+        drehe("links");
+        
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+        drehe("rechts");
+        fahre();
+        drehe("rechts");
+        
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+        drehe("links");
+        fahre();
+        drehe("links");
+        
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+    
+    }
     
     public void fahren()
     {
@@ -113,6 +170,10 @@ public class Rover extends Actor
         else if (richtung=="links")
         {
             setRotation(getRotation()-90);
+        }
+        else if (richtung == "zurück")
+        {
+            setRotation(getRotation()-180);
         }
         else
         {
