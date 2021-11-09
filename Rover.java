@@ -65,6 +65,20 @@ public class Rover extends Actor
         fahre();
     
     }
+    public void fahreSchlaufe()
+    {
+drehe("rechts");
+fahre();
+fahre();
+fahre();
+fahre();
+drehe("zurück")
+fahre();
+fahre();
+fahre();
+fahre();
+drehe("rechts");
+    }
     
     public void fahren()
     {
