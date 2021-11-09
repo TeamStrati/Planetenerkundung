@@ -79,7 +79,14 @@ fahre();
 fahre();
 drehe("rechts");
     }
-    
+    public void feld()
+    {
+fahreSchlaufe();
+fahreSchlaufe();
+fahreSchlaufe();
+fahreSchlaufe();
+fahreSchlaufe();
+}
     public void fahren()
     {
         while(!markeVorhanden()){
