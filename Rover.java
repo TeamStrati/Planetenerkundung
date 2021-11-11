@@ -18,6 +18,34 @@ public class Rover extends Actor
       
 }
 
+public void Algorithmen1()
+    {
+        while(!markeVorhanden())
+        {
+            while(huegelVorhanden("vorne"))
+            {
+                if(gesteinVorhanden())
+                {
+                    analysiereGestein();
+                }
+                drehe("links");
+                fahre();
+                
+            }
+            while(huegelVorhanden("rechts"))
+            {
+                if(gesteinVorhanden())
+                {
+                    analysiereGestein();
+                }
+                fahre();
+                
+            }
+            
+            drehe("rechts");
+            fahre();
+        }
+    }
     
     public void nr1()
     {
