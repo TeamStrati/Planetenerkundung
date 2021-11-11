@@ -9,6 +9,16 @@ public class Rover extends Actor
        
     } 
     
+    public void fahrevier()
+    {
+      fahre()
+      fahre()
+      fahre()
+      fahre()
+      
+}
+
+    
     public void nr1()
     {
         drehe("rechts");
