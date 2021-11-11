@@ -77,6 +77,7 @@ public class Rover extends Actor
     }
     public void fahreSchlaufe()
     {
+fahre();
 drehe("rechts");
 fahre();
 fahre();
