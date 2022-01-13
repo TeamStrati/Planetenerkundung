@@ -17,6 +17,23 @@ public class Rover extends Actor
       fahre()
       
 }
+public void findeAusgangRHR(){
+        while(!markeVorhanden()){ 
+        if(huegelVorhanden("rechts") && huegelVorhanden("vorne")) {
+            
+            drehe("links");
+            
+            }
+            if(huegelVorhanden("rechts") && !huegelVorhanden("vorne")){
+                fahre();
+            }
+        if(!huegelVorhanden("rechts")){
+                drehe("rechts");
+                fahre();
+            }
+        }  
+    }
+
 
 public void Algorithmen1()
     {
