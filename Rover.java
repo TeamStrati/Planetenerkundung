@@ -6,36 +6,69 @@ public class Rover extends Actor
 
     public void act() 
     {
-       
+
     } 
-    
+
     public void fahrevier()
     {
-      fahre()
-      fahre()
-      fahre()
-      fahre()
-      
-}
-public void findeAusgangRHR(){
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+
+    }
+
+    public void findeAusgangRHR(){
         while(!markeVorhanden()){ 
-        if(huegelVorhanden("rechts") && huegelVorhanden("vorne")) {
+            int winkelzähler = 0;
             
-            drehe("links");
-            
+            if(huegelVorhanden("rechts") && huegelVorhanden("vorne")) {
+
+                drehe("links");
+                winkelzähler = winkelzähler - 90;
             }
             if(huegelVorhanden("rechts") && !huegelVorhanden("vorne")){
                 fahre();
             }
-        if(!huegelVorhanden("rechts")){
+            if(!huegelVorhanden("rechts")){
                 drehe("rechts");
                 fahre();
+                winkelzähler = winkelzähler + 90;
             }
         }  
     }
+    
+    public void FindeAusgangPledge(){
+        while (!markeVorhanden()){
+            int winkelzähler = 0;
+            while(!huegelVorhanden("vorne")){
+                fahre();
+            }
+            drehe("rechts");
+            winkelzähler++;
+            while(!markeVorhanden()&&winkelzähler!=0){
+                winkelzähler = RHR(winkelzähler);
+            }
+        }
+    }
+    
+    public int RHR(int drehung){
+        if(huegelVorhanden("rechts") && !huegelVorhanden("vorne")){
+            fahre();
+        }
+        else if(huegelVorhanden("vorne") && huegelVorhanden("rechts")){
+            drehe("links");
+            drehung--;
+        }
+        else if(!huegelVorhanden("rechts")){
+            drehe("rechts");
+            drehung++;
+            fahre();
+        }
+        return drehung;
+    }
 
-
-public void Algorithmen1()
+    public void Algorithmen1()
     {
         while(!markeVorhanden())
         {
@@ -47,7 +80,7 @@ public void Algorithmen1()
                 }
                 drehe("links");
                 fahre();
-                
+
             }
             while(huegelVorhanden("rechts"))
             {
@@ -56,14 +89,14 @@ public void Algorithmen1()
                     analysiereGestein();
                 }
                 fahre();
-                
+
             }
-            
+
             drehe("rechts");
             fahre();
         }
     }
-    
+
     public void nr1()
     {
         drehe("rechts");
@@ -89,7 +122,7 @@ public void Algorithmen1()
         drehe("rechts");
         fahre();
         drehe("rechts");
-        
+
         fahre();
         fahre();
         fahre();
@@ -97,7 +130,7 @@ public void Algorithmen1()
         drehe("links");
         fahre();
         drehe("links");
-        
+
         fahre();
         fahre();
         fahre();
@@ -105,7 +138,7 @@ public void Algorithmen1()
         drehe("rechts");
         fahre();
         drehe("rechts");
-        
+
         fahre();
         fahre();
         fahre();
@@ -113,70 +146,73 @@ public void Algorithmen1()
         drehe("links");
         fahre();
         drehe("links");
-        
+
         fahre();
         fahre();
         fahre();
         fahre();
-    
+
     }
+
     public void fahreSchlaufe()
     {
-fahre();
-drehe("rechts");
-fahre();
-fahre();
-fahre();
-fahre();
-drehe("zurück")
-fahre();
-fahre();
-fahre();
-fahre();
-drehe("rechts");
+        fahre();
+        drehe("rechts");
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+        drehe("zurück");
+        fahre();
+        fahre();
+        fahre();
+        fahre();
+        drehe("rechts");
     }
+
     public void feld()
     {
-fahreSchlaufe();
-fahreSchlaufe();
-fahreSchlaufe();
-fahreSchlaufe();
-fahreSchlaufe();
-}
+        fahreSchlaufe();
+        fahreSchlaufe();
+        fahreSchlaufe();
+        fahreSchlaufe();
+        fahreSchlaufe();
+    }
+
     public void fahren()
     {
         while(!markeVorhanden()){
-        fahre();
-        huegelumfahren();
-        if(gesteinVorhanden())
-        {
-            analysiereGestein();
+            fahre();
+            huegelumfahren();
+            if(gesteinVorhanden())
+            {
+                analysiereGestein();
+            }
         }
-        }
-        
+
     }
-    
+
     public void huegelumfahren()
     {
         if (huegelVorhanden("vorne"))
+        {
+            if(!huegelVorhanden("links"))
             {
-                if(!huegelVorhanden("links"))
-                {
                 drehe("links");
                 fahre();
-                    while (huegelVorhanden("rechts"))
-                    {
+                while (huegelVorhanden("rechts"))
+                {
                     fahre();
-                    }
+                }
                 drehe("rechts");
                 fahre();
-                       while (huegelVorhanden("rechts"))
-                    {
+                while (huegelVorhanden("rechts"))
+                {
                     fahre();
-                    }
-        
+                }
+
                 drehe("rechts");
-            
+
                 fahre();
                 drehe("links");
             }
@@ -184,25 +220,24 @@ fahreSchlaufe();
             {
                 drehe("rechts");
                 fahre();
-                    while (huegelVorhanden("links"))
-                    {
+                while (huegelVorhanden("links"))
+                {
                     fahre();
-                    }
+                }
                 drehe("links");
                 fahre();
-                       while (huegelVorhanden("links"))
-                    {
+                while (huegelVorhanden("links"))
+                {
                     fahre();
-                    }
-        
+                }
+
                 drehe("links");
-            
+
                 fahre();
                 drehe("rechts");
             }
         }
     }
-
 
     /**
      * Der Rover bewegt sich ein Feld in Fahrtrichtung weiter.
@@ -411,7 +446,7 @@ fahreSchlaufe();
 
         public Display()
         {
-          bild = getImage();
+            bild = getImage();
         }
 
         public void act() 
@@ -421,8 +456,8 @@ fahreSchlaufe();
 
         public void anzeigen(String pText)
         {
-           loeschen();
-           getImage().drawImage(new GreenfootImage(pText, 25, Color.BLACK, new Color(0, 0, 0, 0)),10,10);
+            loeschen();
+            getImage().drawImage(new GreenfootImage(pText, 25, Color.BLACK, new Color(0, 0, 0, 0)),10,10);
 
         }
 
